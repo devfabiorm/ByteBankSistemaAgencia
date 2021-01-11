@@ -12,14 +12,13 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            string url = "pagina?argumentos";
+            string urlParametros = "http://www.bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar";
+            ExtratorDeArgumentosURL extrator = new ExtratorDeArgumentosURL(urlParametros);
+            string valor = extrator.GetValor("moedaOrigem");
+            string valor2 = extrator.GetValor("moedaDestino");
 
-            Console.WriteLine(url);
-
-            string substring = url.Substring(7);
-
-            Console.WriteLine(substring);
-
+            Console.WriteLine("Valor de moedaOrigem: " + valor);
+            Console.WriteLine("Valor de moedaDestino: " + valor2);
             Console.ReadLine();
         }
 
