@@ -12,6 +12,19 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            string url = "pagina?argumentos";
+
+            Console.WriteLine(url);
+
+            string substring = url.Substring(7);
+
+            Console.WriteLine(substring);
+
+            Console.ReadLine();
+        }
+
+        static void TestaDateTime()
+        {
             DateTime dataFimPagamento = new DateTime(2021, 5, 9);
             DateTime dataCorrente = DateTime.Now;
 
@@ -21,9 +34,7 @@ namespace ByteBank.SistemaAgencia
 
             Console.WriteLine(mensagem);
 
-            ContaCorrente conta = new ContaCorrente(847, 84728);
-
-            Console.ReadLine();
+            ContaCorrente conta = new ContaCorrente(847, 847286);
         }
     }
 }
