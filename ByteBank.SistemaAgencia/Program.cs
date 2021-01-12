@@ -13,6 +13,14 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            object conta = new ContaCorrente(847, 8475531);
+
+            Console.WriteLine("Resultado " + conta.ToString());
+            Console.ReadLine();
+        }
+
+        static void TestaString()
+        {
             //string padrao = "[0123456789][0123456789][0123456789][0123456789][-][0123456789][0123456789][0123456789][0123456789]";
             //string padrao = "[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]";
             //string padrao = "[0-9]{4}[-][0-9]{4}";
@@ -39,7 +47,6 @@ namespace ByteBank.SistemaAgencia
 
             Console.WriteLine("Valor de moedaOrigem: " + valor);
             Console.WriteLine("Valor de moedaDestino: " + valor2);
-            Console.ReadLine();
         }
 
         static void TestaDateTime()
