@@ -12,6 +12,13 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            string urlTeste = "https://www.bytebank.com/cambio";
+
+            Console.WriteLine(urlTeste.StartsWith("https://www.bytebank.com"));
+            Console.WriteLine(urlTeste.EndsWith("cambio"));
+            Console.WriteLine(urlTeste.Contains("bytebank"));
+            Console.ReadLine();
+
             string urlParametros = "http://www.bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar";
             ExtratorDeArgumentosURL extrator = new ExtratorDeArgumentosURL(urlParametros);
             string valor = extrator.GetValor("MoEdaOrigem");
