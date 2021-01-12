@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Humanizer;
+using System.Text.RegularExpressions;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -12,8 +13,15 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            string urlTeste = "https://www.bytebank.com/cambio";
+            //string padrao = "[0123456789][0123456789][0123456789][0123456789][-][0123456789][0123456789][0123456789][0123456789]";
+            //string padrao = "[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]";
+            string padrao = "[0-9]{4}[-][0-9]{4}";
+            string textoTeste = "Pode me ligar em 2546-3234";
+            Match teste = Regex.Match(textoTeste, padrao);
+            Console.WriteLine(teste.Value);
+            Console.ReadLine();
 
+            string urlTeste = "https://www.bytebank.com/cambio";
             Console.WriteLine(urlTeste.StartsWith("https://www.bytebank.com"));
             Console.WriteLine(urlTeste.EndsWith("cambio"));
             Console.WriteLine(urlTeste.Contains("bytebank"));
