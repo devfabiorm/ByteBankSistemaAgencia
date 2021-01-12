@@ -15,8 +15,13 @@ namespace ByteBank.SistemaAgencia
         {
             //string padrao = "[0123456789][0123456789][0123456789][0123456789][-][0123456789][0123456789][0123456789][0123456789]";
             //string padrao = "[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]";
-            string padrao = "[0-9]{4}[-][0-9]{4}";
-            string textoTeste = "Pode me ligar em 2546-3234";
+            //string padrao = "[0-9]{4}[-][0-9]{4}";
+            //string padrao = "[0-9]{4,5}[-][0-9]{4}";
+            //string padrao = "[0-9]{4,5}[-]{0,1}[0-9]{4}";
+            //string padrao = "[0-9]{4,5}-{0,1}[0-9]{4}";
+            string padrao = "[0-9]{4,5}-?[0-9]{4}";
+
+            string textoTeste = "Pode me ligar em 94546-3234";
             Match teste = Regex.Match(textoTeste, padrao);
             Console.WriteLine(teste.Value);
             Console.ReadLine();
