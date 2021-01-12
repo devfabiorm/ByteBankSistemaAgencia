@@ -16,6 +16,26 @@ namespace ByteBank.SistemaAgencia
             object conta = new ContaCorrente(847, 8475531);
 
             Console.WriteLine("Resultado " + conta.ToString());
+
+            Cliente cliente = new Cliente();
+            cliente.Nome = "Fabio";
+            cliente.CPF = "123.123.123-12";
+            cliente.Profissao = "Desenvolvedor";
+
+            Cliente cliente2 = new Cliente();
+            cliente2.Nome = "Fabio";
+            cliente2.CPF = "123.123.123-12";
+            cliente2.Profissao = "Desenvolvedor";
+
+            if (cliente.Equals(cliente2))
+            {
+                Console.WriteLine("São iguais");
+            }
+            else
+            {
+                Console.WriteLine("São diferentes");
+            }
+
             Console.ReadLine();
         }
 
