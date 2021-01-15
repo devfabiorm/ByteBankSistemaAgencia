@@ -13,6 +13,37 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            ListaDeContaCorrente lista = new ListaDeContaCorrente();
+
+            lista.Adicionar(new ContaCorrente(874, 8745656));
+            lista.Adicionar(new ContaCorrente(874, 8745655));
+            lista.Adicionar(new ContaCorrente(874, 8745654));
+            lista.Adicionar(new ContaCorrente(874, 8745654));
+            lista.Adicionar(new ContaCorrente(874, 8745654));
+            lista.Adicionar(new ContaCorrente(874, 8745654));
+            lista.Adicionar(new ContaCorrente(874, 8745654));
+
+            Console.ReadLine();
+        }
+
+        static void TestaArrayDeContaCorrente()
+        {
+            ContaCorrente[] contas = new ContaCorrente[]
+            {
+                new ContaCorrente(874, 8745656),
+                new ContaCorrente(874, 8744456),
+                new ContaCorrente(874, 8742135)
+            };
+
+            for (int indice = 0; indice < contas.Length; indice++)
+            {
+                ContaCorrente contaAtual = contas[indice];
+                Console.WriteLine($"Conta {indice} {contaAtual.Numero}");
+            }
+        }
+
+        static void TestaObjectMethods()
+        {
             object conta = new ContaCorrente(847, 8475531);
 
             Console.WriteLine("Resultado " + conta.ToString());
@@ -35,8 +66,6 @@ namespace ByteBank.SistemaAgencia
             {
                 Console.WriteLine("São diferentes");
             }
-
-            Console.ReadLine();
         }
 
         static void TestaString()
