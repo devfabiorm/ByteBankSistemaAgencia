@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Humanizer;
 using System.Text.RegularExpressions;
+using ByteBank.SistemaAgencia.Extensoes;
 
 namespace ByteBank.SistemaAgencia
 {
@@ -16,6 +17,7 @@ namespace ByteBank.SistemaAgencia
             List<int> idades = new List<int>();
 
             idades.AdicionarVarios(1, 5, 8, 4);
+            
 
             for(int i = 0; i < idades.Count; i++)
             {
