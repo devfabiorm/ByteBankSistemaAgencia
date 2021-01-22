@@ -9,7 +9,7 @@ namespace ByteBank.Modelos
     /// <summary>
     /// Define uma Conta Corrente do Banco ByteBank. 
     /// </summary>
-    public class ContaCorrente
+    public class ContaCorrente : IComparable
     {
         private static double TaxaOperacao;
         public static int TotalDeContasCriadas { get; private set; }
@@ -126,6 +126,32 @@ namespace ByteBank.Modelos
             }
 
             return this.Agencia == outraContaCorrente.Agencia && this.Numero == outraContaCorrente.Numero;
+        }
+
+        public int CompareTo(object obj)
+        {
+            var outraConta = obj as ContaCorrente;
+
+            //Retornar negativo quanto a instância precede o obj
+            //Retornar zero quando são iguais
+            //Retornar positivo quanto o obj prercede a instância
+
+            if(outraConta == null)
+            {
+                return -1;
+            }
+
+            if(Numero < outraConta.Numero)
+            {
+                return -1;
+            }
+
+            if(Numero == outraConta.Numero)
+            {
+                return 0;
+            }
+
+            return 1;
         }
     }
 }
